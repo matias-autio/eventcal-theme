@@ -1,36 +1,43 @@
 {>"shared/header" /}
 
+<div class="events prose px-8 mx-auto max-w-screen-lg">
+
+<h1>{@title /}</h1>
+
 {! Open the PageEvents context !}
 {#PageEvents}
-    
-    <h1>Events</h1>
 
-    <h2>Upcoming Events</h2>
-    {#UpcomingEvents}
-        <article>
-            <h3>{post_title}</h3>
-            <p>{post_excerpt}</p>
-            <p>Start: {fields.start_date}</p>
-            <p>End: {fields.end_date}</p>
-        </article>
-    {/UpcomingEvents}
+    <div class="tabs not-prose mb-8 text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
+        <ul class="flex flex-wrap -mb-px">
+            <li class="mr-2">
+                <button data-target-id="upcoming" class="tab active">Upcoming events</button>
+            </li>
+            <li class="mr-2">
+                <button data-target-id="all" class="tab" aria-current="page">All Events</button>
+            </li>
+        </ul>
+    </div>
 
-    <h2>All Events</h2>
-
-    {#Events}
-    
-        <article>
-            <h3>{post_title}</h3>
-            <p>{post_excerpt}</p>
-            <p>Start: {fields.start_date}</p>
-            <p>End: {fields.end_date}</p>
-        </article>
-
-    {/Events}
-
+    <div class="tab-content">
+        <div id="upcoming" class="tab-pane active">
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {#UpcomingEvents}
+                    {>"shared/event-item" /}
+                {/UpcomingEvents}
+            </div>
+        </div>
+        <div id="all" class="tab-pane hidden">
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {#Events}
+                    {>"shared/event-item" /}
+                {/Events}
+            </div>
+        </div>
+    </div>
 
 {/PageEvents}
 {! End the PageEvents context !}
 
+</div>
 
 {>"shared/footer" /}

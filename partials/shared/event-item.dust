@@ -1,0 +1,7 @@
+<article class="text-gray-500 border border-gray-200 rounded-md px-8 bg-slate-100">
+    <h3>{post_title}</h3>
+    <div>
+        <time datetime="{fields.start_date}"">{@strtodate value=fields.start_date /}</time> – <time datetime="{fields.end_date}"">{@strtodate value=fields.end_date /}</time>
+    </div>
+    <p>{post_excerpt}</p>
+</article>

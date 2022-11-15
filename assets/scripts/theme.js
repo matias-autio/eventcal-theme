@@ -1,4 +1,7 @@
 import '../stylesheets/theme.css';
+import tabs from './components/tabs';
+
+tabs.init();
 
 window.DustPressStarter = (function(window, document, $) {
 
