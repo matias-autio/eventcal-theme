@@ -1,0 +1,22 @@
+{>"shared/header" /}
+
+{! Open the SingleEvent context !}
+{#SingleEvent}
+    {#Event}
+
+    <h1 class="event__title">{@title /}</h1>
+    <p class="event__excerpt">{post_excerpt}</p>
+    <div class="event__content">
+        {@content /}    
+    </div>
+    <div class="event__start">{fields.start_date}</div>
+    <div class="event__end">{fields.end_date}</div>
+
+    {/Event}
+
+
+{/SingleEvent}
+{! End the SingleEvent context !}
+
+
+{>"shared/footer" /}

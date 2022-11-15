@@ -1,0 +1,36 @@
+{>"shared/header" /}
+
+{! Open the PageEvents context !}
+{#PageEvents}
+    
+    <h1>Events</h1>
+
+    <h2>Upcoming Events</h2>
+    {#UpcomingEvents}
+        <article>
+            <h3>{post_title}</h3>
+            <p>{post_excerpt}</p>
+            <p>Start: {fields.start_date}</p>
+            <p>End: {fields.end_date}</p>
+        </article>
+    {/UpcomingEvents}
+
+    <h2>All Events</h2>
+
+    {#Events}
+    
+        <article>
+            <h3>{post_title}</h3>
+            <p>{post_excerpt}</p>
+            <p>Start: {fields.start_date}</p>
+            <p>End: {fields.end_date}</p>
+        </article>
+
+    {/Events}
+
+
+{/PageEvents}
+{! End the PageEvents context !}
+
+
+{>"shared/footer" /}
