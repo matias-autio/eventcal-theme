@@ -20,6 +20,10 @@ if ( ! defined( 'ASSETS_DIR' ) ) {
     define( 'ASSETS_DIR', get_template_directory_uri() . '/assets' );
 }
 
+if ( ! defined( 'DIST_DIR' ) ) {
+    define( 'DIST_DIR', get_template_directory_uri() . '/dist' );
+}
+
 /**
  * Theme setup
  */
@@ -56,9 +60,15 @@ function scripts_and_styles() {
     $theme      = \wp_get_theme();
     $version    = $theme->get( 'Version' );
 
+    /*
     \wp_enqueue_script( 'theme-js', ASSETS_DIR . '/scripts/theme.js', [ 'jquery' ], $version, true );
     \wp_enqueue_style( 'normalize', ASSETS_DIR . '/stylesheets/normalize.css', [], '5.0.0', 'all' );
     \wp_enqueue_style( 'theme-css', ASSETS_DIR . '/stylesheets/theme.css', [], $version, 'all' );
+    */
+
+    \wp_enqueue_script( 'theme-js', DIST_DIR . '/theme.js', [ 'jquery' ], $version, true );
+    \wp_enqueue_style( 'theme-css', DIST_DIR . '/theme.css', [], $version, 'all' );
+
 }
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\scripts_and_styles' );

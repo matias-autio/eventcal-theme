@@ -1,3 +1,5 @@
+import '../stylesheets/theme.css';
+
 window.DustPressStarter = (function(window, document, $) {
 
     var app = {

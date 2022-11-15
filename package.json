@@ -1,0 +1,24 @@
+{
+  "name": "eventcal-theme",
+  "version": "1.0.0",
+  "description": "A basic and very bare theme that you can build your own theme from. There isn't really any layout or content but file structure and examples of classes to start with.",
+  "scripts": {
+    "clean": "rm -r dist/",
+    "dev": "parcel watch assets/scripts/theme.js",
+    "build": "parcel build assets/scripts/theme.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matias-autio/eventcal-theme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matias-autio/eventcal-theme/issues"
+  },
+  "homepage": "https://github.com/matias-autio/eventcal-theme#readme",
+  "devDependencies": {
+    "parcel": "^2.8.0"
+  }
+}
