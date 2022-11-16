@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/matias-autio/eventcal-theme#readme",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.0",
     "@tailwindcss/typography": "^0.5.8",
     "parcel": "^2.8.0",
     "postcss": "^8.4.19",

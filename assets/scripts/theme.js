@@ -1,4 +1,4 @@
-import '../stylesheets/theme.css';
+import '../stylesheets/theme.scss';
 import tabs from './components/tabs';
 
 tabs.init();
