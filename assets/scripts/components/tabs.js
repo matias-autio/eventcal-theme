@@ -13,13 +13,17 @@ export default {
             const id = tab.dataset.targetId;
 
             tab.addEventListener('click', function(e){    
-                // Remove active class from all tabs
+                // Remove active class and aria-current from all tabs
                 tabs.forEach( (tab) => {
                     tab.classList.remove('active');
+                    tab.removeAttribute('aria-current');
+                    tab.setAttribute('tabindex', -1);
                 });
    
-                // Add active class to clicked tab
+                // Add active class to clicked tab and set aria-current
                 tab.classList.add('active');
+                tab.setAttribute('aria-current', 'true');
+                tab.setAttribute('tabindex', 0);
 
                 // Hide all tab panes
                 const tabPane = document.querySelectorAll('.tab-pane');
