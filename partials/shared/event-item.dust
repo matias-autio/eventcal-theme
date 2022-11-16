@@ -1,7 +1,20 @@
-<article class="text-gray-500 border border-gray-200 rounded-md px-8 bg-slate-100">
-    <h3>{post_title}</h3>
+<article class="event-item overflow-hidden not-prose text-gray-500 border border-gray-200 rounded-3xl bg-slate-100 shadow-lg">
     <div>
-        <time datetime="{fields.start_date}"">{@strtodate value=fields.start_date /}</time> – <time datetime="{fields.end_date}"">{@strtodate value=fields.end_date /}</time>
+        {@image id=image_id size="large" class="event-item__image rounded-3xl rounded-b-none w-full h-full object-cover aspect-fourthree" /}
+        <div class="flex justify-center -mt-14">
+            <div class="flex flex-col w-28 h-28 gap-1 justify-center items-center not-prose rounded-full bg-blue-700 text-white text-center shadow-lg border-slate-100 border-2">
+                <div class="text-sm leading-none">{@strtodate value=fields.start_date format="M" /}</div>
+                <div class="text-number leading-none">{@strtodate value=fields.start_date format="jS" /}</div>
+                <div class="text-sm leading-none">{@strtodate value=fields.start_date format="Y" /}</div>
+            </div>
+        </div>
     </div>
-    <p>{post_excerpt}</p>
+    <div class="px-8 pb-8 flex flex-col gap-2">
+        <h2 class="font-bold text-center text-3xl mt-6">{post_title}</h2>
+        <div class="text-sm text-center mb-4">
+            <time datetime="{fields.start_date}"">{@strtodate value=fields.start_date /}</time> – <time datetime="{fields.end_date}"">{@strtodate value=fields.end_date /}</time>
+        </div>
+        <p class="text-lg font-bold mb-4">{post_excerpt}</p>
+        <div class="">{post_content}</div>
+    </div>
 </article>

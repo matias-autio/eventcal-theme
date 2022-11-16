@@ -12,15 +12,17 @@
 
 <body class="{#WP.body_class}{.}{@sep} {/sep}{/WP.body_class}">
 
-<div class="top-bar">
+<div class="px-4">
+<div class="top-bar text-slate-700 max-w-5xl mx-auto my-8 bg-slate-200 rounded-full px-8 font-bold flex items-center justify-between">
     <div class="top-bar-left">
         <ul class="menu">
             <li class="menu-text"><a href="{WP.url}">{WP.name}</a></li>
         </ul>
     </div>
     <div class="top-bar-right">
-        {@menu menu_name="primary_navigation" ul_id="primary-menu" ul_classes="menu primary-menu" show_submenu=false /}
+        {@menu menu_name="primary_navigation" ul_id="primary-menu" ul_classes="menu primary-menu flex gap-4" show_submenu=false /}
     </div>
+</div>
 </div>
 
 <div class="main-container">

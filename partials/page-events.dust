@@ -1,6 +1,6 @@
 {>"shared/header" /}
 
-<div class="events prose px-8 mx-auto max-w-screen-lg">
+<div class="events prose p-8 mx-auto max-w-screen-xl">
 
 <h1>{@title /}</h1>
 
@@ -20,14 +20,14 @@
 
     <div class="tab-content">
         <div id="upcoming" class="tab-pane active">
-            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="grid gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                 {#UpcomingEvents}
                     {>"shared/event-item" /}
                 {/UpcomingEvents}
             </div>
         </div>
         <div id="all" class="tab-pane hidden">
-            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="grid gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                 {#Events}
                     {>"shared/event-item" /}
                 {/Events}

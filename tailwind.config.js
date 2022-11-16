@@ -4,7 +4,14 @@ module.exports = {
     "partials/**/*.dust",
   ],
   theme: {
-    extend: {},
+    extend: {
+      aspectRatio: {
+        "fourthree": "4 / 3",
+      },
+      fontSize: {
+        'number': '2.9rem',
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),
