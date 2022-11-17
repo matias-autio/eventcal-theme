@@ -18,8 +18,9 @@
 } 
 
 .event-item{
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
   &:hover{
-    transform: scale(1.05) rotate(2deg) translate(6px, 6px);
+    transform: scale(1.05) translate(0rem, -1.75rem);
+    @apply shadow-2xl;
   }
 }

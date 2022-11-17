@@ -6,7 +6,7 @@ export default {
             return;
         };
 
-        const tabs = document.querySelectorAll('.tab');
+        const tabs = document.querySelectorAll('.js-tab');
         
         tabs.forEach(tab => {
 
