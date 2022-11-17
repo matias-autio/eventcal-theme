@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  .primary-menu{
+    a{
+      @apply hover:text-black flex p-4 border-b-2 border-transparent hover:border-black;
+    }
+  } 
+}
+
 @layer components {
     .tab {
       @apply inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300;
@@ -11,16 +19,12 @@
     }
 }
 
-.primary-menu{
-  a{
-    @apply hover:text-black flex p-4 border-b-2 border-transparent hover:border-black;
-  }
-} 
-
-.event-item{
-  transition: transform 0.3s, box-shadow 0.3s;
-  &:hover{
-    transform: scale(1.05) translate(0rem, -1.75rem);
-    @apply shadow-2xl;
+@layer utilities {
+  .animate-scale-up{
+    transition: transform 0.3s, box-shadow 0.3s;
+    &:hover{
+      transform: scale(1.05) translate(0rem, -1.75rem);
+      @apply shadow-2xl;
+    }
   }
 }

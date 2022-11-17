@@ -1,6 +1,8 @@
-<article class="event-item overflow-hidden not-prose text-gray-500 border border-gray-200 rounded-3xl bg-slate-100 shadow-lg">
+<article class="event-item animate-scale-up overflow-hidden not-prose border border-gray-200 rounded-3xl bg-slate-100 shadow-lg">
     <div>
-        {@image id=image_id size="large" class="event-item__image rounded-3xl rounded-b-none w-full h-full object-cover aspect-fourthree" /}
+        <div class="bg-gray-300 aspect-fourthree">
+            {@image id=image_id size="large" class="event-item__image rounded-3xl rounded-b-none w-full h-full object-cover" /}
+        </div>
         <div class="flex justify-center -mt-14">
             <div class="flex flex-col w-28 h-28 gap-1 justify-center items-center not-prose rounded-full bg-blue-700 text-white text-center shadow-lg border-slate-100 border-2">
                 <div class="text-sm leading-none">{@strtodate value=fields.start_date format="M" /}</div>

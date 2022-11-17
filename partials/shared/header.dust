@@ -1,9 +1,10 @@
 <!doctype html>
-<html {WP.LanguageAttributes}>
+<html lang={WP.language}>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content={WP.description}>
 
     <title>{WP.name}</title>
 
@@ -13,7 +14,7 @@
 <body class="{#WP.body_class}{.}{@sep} {/sep}{/WP.body_class}">
 
 <div class="px-4">
-<div class="top-bar text-slate-700 max-w-5xl mx-auto my-8 bg-slate-200 rounded-full px-8 font-bold flex items-center justify-between">
+<div class="top-bar text-slate-700 max-w-7xl mx-auto my-8 bg-slate-200 rounded-full px-8 font-bold flex items-center justify-between">
     <div class="top-bar-left">
         <ul class="menu">
             <li class="menu-text"><a href="{WP.url}">{WP.name}</a></li>

@@ -8,14 +8,10 @@
 {#PageEvents}
 
     <div class="tabs not-prose mb-8 text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
-        <ul role="tablist" class="flex flex-wrap -mb-px">
-            <li class="mr-2">
-                <button data-target-id="upcoming" id="tab-upcoming" role="tab" aria-selected="true" aria-controls="upcoming" tabindex="0"  class="js-tab tab active">Upcoming events</button>
-            </li>
-            <li class="mr-2">
-                <button data-target-id="all" id="tab-all" role="tab" aria-selected="false" aria-controls="all" tabindex="-1" class="js-tab tab">All Events</button>
-            </li>
-        </ul>
+        <div role="tablist" class="flex flex-wrap -mb-px">
+            <button data-target-id="upcoming" id="tab-upcoming" role="tab" aria-selected="true" aria-controls="upcoming" tabindex="0"  class="js-tab tab active mr-2">Upcoming events</button>
+            <button data-target-id="all" id="tab-all" role="tab" aria-selected="false" aria-controls="all" tabindex="-1" class="js-tab tab mr-2">All Events</button>
+        </div>
     </div>
 
     <div class="tab-content">
