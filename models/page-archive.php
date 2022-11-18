@@ -26,8 +26,8 @@ class PageArchive extends MiddleModel {
      * @return array|bool|WP_Query
      */
     public function Query() {
-        $args = $this->get_args();
-
+        $args = (array) $this->get_args();
+        
         // Ajax requests set the page parameter.
         $page = isset( $args['page'] ) ? $args['page'] : 1;
 

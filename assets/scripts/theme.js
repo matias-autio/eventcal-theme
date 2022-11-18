@@ -34,15 +34,13 @@ window.DustPressStarter = (function(window, document, $) {
             },
             tidy: true,
             partial: "post-list",
-            success: function(response) {
-                app.$postsContainer.append(response);
-                if ( app.currentPage === app.maxNumPages ) {
-                    app.$loadMore.hide();
-                }
-            },
-            error: function( error ) {
-                console.log(error);
+        }).then(function(data) {
+            app.$postsContainer.append(data.success);
+            if ( app.currentPage === app.maxNumPages ) {
+                app.$loadMore.hide();
             }
+        }).error(function(error) {
+            console.log(error);
         });
 
         return false;
