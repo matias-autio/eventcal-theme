@@ -3,17 +3,15 @@
 {! Open the Index context !}
 {#PageArchive}
 
-    <div class="main-content" id="main-content">
-        <div class="post-list-container" id="post-list-container">
-            {! Use a partial to enable ajaxing !}
-            {#Query}
-                {>"shared/post-list"/}
-            {/Query}
-        </div>
-        {@gt key=Query.max_num_pages value=1}
-            <a href="#" id="load-more" data-max-num-pages="{Query.max_num_pages}">Load more</a>
-        {/gt}
+    <div class="post-list-container" id="post-list-container">
+        {! Use a partial to enable ajaxing !}
+        {#Query}
+            {>"shared/post-list"/}
+        {/Query}
     </div>
+    {@gt key=Query.max_num_pages value=1}
+        <button id="js-load-more-posts" data-max-num-pages="{Query.max_num_pages}">Load more</button>
+    {/gt}
 
 {/PageArchive}
 {! End the Index context !}

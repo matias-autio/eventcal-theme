@@ -14,9 +14,14 @@
     .tab {
       @apply inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300;
       &.active {
-        @apply inline-block p-4 text-blue-700 rounded-t-lg border-b-2 border-blue-700 dark:text-blue-500 dark:border-blue-500;
+        @apply inline-block p-4 text-blue-700 rounded-t-lg border-b-2 border-blue-700;
       }
     }
+
+    .btn{
+      @apply px-6 py-3 rounded-full text-center shadow-lg text-blue-700 border-2 border-blue-700 font-bold hover:bg-blue-700 hover:text-white;
+    }
+
 }
 
 @layer utilities {

@@ -10,23 +10,29 @@
     <div class="tabs not-prose mb-8 text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
         <div role="tablist" class="flex flex-wrap -mb-px">
             <button data-target-id="upcoming" id="tab-upcoming" role="tab" aria-selected="true" aria-controls="upcoming" tabindex="0"  class="js-tab tab active mr-2">Upcoming events</button>
-            <button data-target-id="all" id="tab-all" role="tab" aria-selected="false" aria-controls="all" tabindex="-1" class="js-tab tab mr-2">All Events</button>
+            <button data-target-id="all" id="tab-all" role="tab" aria-selected="false" aria-controls="all" tabindex="-1" class="js-tab tab mr-2">All events</button>
         </div>
     </div>
 
     <div class="tab-content">
         <div id="upcoming" class="tab-pane active" role="tabpanel" tabindex="0" aria-labelledby="tab-upcoming">
-            <div class="grid gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div id="upcoming-container" class="grid gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                 {#UpcomingEvents}
-                    {>"shared/event-item" /}
+                    {>"shared/event-list" /}
                 {/UpcomingEvents}
+            </div>
+            <div class="flex justify-center my-16">
+                <button id="js-load-more-upcoming-events" class="btn" href="#" data-max-num-pages="{UpcomingEvents.max_num_pages}">Load more Upcoming Events</button>
             </div>
         </div>
         <div id="all" class="tab-pane hidden" role="tabpanel" tabindex="0" aria-labelledby="tab-all">
-            <div class="grid gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div id="events-container" class="grid gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                 {#Events}
-                    {>"shared/event-item" /}
+                    {>"shared/event-list" /}
                 {/Events}
+            </div>
+            <div class="flex justify-center my-16">
+                <button id="js-load-more-events" class="btn" href="#" data-max-num-pages="{Events.max_num_pages}">Load more Events</button>
             </div>
         </div>
     </div>
@@ -35,5 +41,4 @@
 {! End the PageEvents context !}
 
 </div>
-
 {>"shared/footer" /}

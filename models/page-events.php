@@ -4,50 +4,52 @@
  * Template Post Type: page
  */
 
-class PageEvents extends \DustPress\Model {
+class PageEvents extends MiddleModel {
+    
+    /**
+     * Enable DustPress.js usage
+     *
+     * @var array
+     */
+    protected $api = [
+        'Events',
+        'UpcomingEvents'
+    ];
+    
     /**
      * Get all events.
+     * This function also handles pagination.
      *
-     * @return array|null|WP_Post
+     * @return array|bool|WP_Query
      */
 
     public function Events() {
-        return \DustPress\Query::get_acf_posts( [
-            'post_type' => 'event',
-            'posts_per_page' => -1,
-            'orderby' => 'date',
-            'order' => 'DESC',
-        ] );
-    }
 
+        $args = (array) $this->get_args();
+        
+        // Ajax requests set the page parameter.
+        $page = isset( $args['page'] ) ? $args['page'] : 1;
+
+        return $this->get_all_events( $page );
+    }
+    
     /**
      * Get upcoming events.
-     * 
-     * @return array|null|WP_Post
+     * This function also handles pagination.
+     *
+     * @return array|bool|WP_Query
      */
-    
+
     public function UpcomingEvents() {
-        return \DustPress\Query::get_acf_posts( [
-            'post_type' => 'event',
-            'posts_per_page' => -1,
-            'orderby' => 'date',
-            'order' => 'ASC',
-            'meta_query' => [
-                'relation' => 'OR',
-                [
-                    'key' => 'start_date',
-                    'value' => date( 'Y-m-d' ),
-                    'compare' => '>=',
-                    'type' => 'DATE',
-                ],
-                [
-                    'key' => 'end_date',
-                    'value' => date('Y-m-d'),
-                    'compare' => '>=',
-                    'type' => 'DATE'
-                ],
-            ],
-        ] );
+
+        $args = (array) $this->get_args();
+        
+        // Ajax requests set the page parameter.
+        $page = isset( $args['page'] ) ? $args['page'] : 1;
+
+        return $this->get_upcoming_events( $page );
     }
+
+
 }
 ?>
